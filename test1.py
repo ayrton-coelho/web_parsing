@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 import time
 
 PATH = "../chromedriver.exe"
@@ -29,14 +29,27 @@ driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/
 
 time.sleep(5)
 
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[7]/td[2]/input[1]").send_keys("7")
+origen_1 = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[7]/td[2]/input[1]")
+origen_1.send_keys("7")
 
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[7]/td[2]/input[2]").send_keys("10")
+origen_2 = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[7]/td[2]/input[2]")
+origen_2.send_keys("10")
 
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[7]/td[2]/input[2]").send_keys("1")
+origen_3 = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[7]/td[2]/input[3]")
+origen_3.send_keys("1")
 
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[8]/td[2]/input[1]").send_keys("7")
+destino_1 = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[8]/td[2]/input[1]")
+destino_1.send_keys("7")
 
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[8]/td[2]/input[1]").send_keys("9")
+destino_2 = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[8]/td[2]/input[2]")
+destino_2.send_keys("9")
 
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[8]/td[2]/input[3]").send_keys("1")
+destino_3 = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[8]/td[2]/input[3]")
+destino_3.send_keys("1")
+
+km = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/table/tbody/tr[9]/td[2]/input")
+km.send_keys("320")
+
+driver.execute_script("document.getElementById('PEROCAFECSAL').setAttribute('value','10/01/2022')")
+
+select = driver.find_element(By.XPATH, "//*[@id='PEROCAHORSAL']/option[2]").click()
