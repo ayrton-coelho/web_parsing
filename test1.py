@@ -51,13 +51,13 @@ distancia_km = driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/t
 distancia_km.send_keys("320")
 
 """ Fecha salida """
-driver.execute_script("document.getElementById('PEROCAFECSAL').setAttribute('value','18/12/2021')")
+driver.execute_script("document.getElementById('PEROCAFECSAL').setAttribute('value','20/12/2021')")
 
 """ Hora salida """
 driver.find_element(By.XPATH, "//*[@id='PEROCAHORSAL']/option[36]").click()
 
 """ Fecha llegada"""
-driver.execute_script("document.getElementById('PEROCAFECLLE').setAttribute('value','23/12/2021')")
+driver.execute_script("document.getElementById('PEROCAFECLLE').setAttribute('value','20/12/2021')")
 
 """ Hora llegada (missing click) """
 driver.find_element(By.XPATH, "//*[@id='PEROCAHORLLE']/option[6]")
@@ -67,7 +67,7 @@ registro.send_keys("200411")
 
 """ Guardar """
 driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr[3]/td/table/tbody/tr/td[1]/input").click()
-time.sleep(1)
+time.sleep(2)
 
 """ Calles y rutas checkboxes """
 driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[3]/td/table/tbody/tr[5]/td/table/tbody/tr[2]/td[1]/div/table/tbody/tr[3]/td[3]/label/input").click()
@@ -80,5 +80,5 @@ time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[3]/td/table/tbody/tr[5]/td/table/tbody/tr[2]/td[1]/div/table/tbody/tr[1]/td[2]/label/input").click()
 time.sleep(1)
 
-""" Confirmar """
-driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td/input[4]").click()
+""" Terminar """
+driver.find_element(By.XPATH, "/html/body/form/p[1]/table/tbody/tr[2]/td[2]/div/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td/input[3]").click()
